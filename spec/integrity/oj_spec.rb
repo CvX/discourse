@@ -16,4 +16,8 @@ describe 'Oj' do
     expect('"hello world"'.to_json). to eq('"\"hello world\""')
     expect("\u2028\u2029><&".to_json).to eq('"\u2028\u2029\u003e\u003c\u0026"')
   end
+
+  it "serializes BigDecimal values as numbers" do
+    expect(BigDecimal('123.0').to_json).to eq('123.0')
+  end
 end
