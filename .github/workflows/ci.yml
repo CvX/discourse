@@ -12,6 +12,7 @@ jobs:
   build:
     name: "${{ matrix.target }}-${{ matrix.build_types }}"
     runs-on: ${{ matrix.os }}
+    container: discourse/discourse_test:release
     timeout-minutes: 60
 
     env:
@@ -60,20 +61,6 @@ jobs:
         run: |
           git config --global user.email "ci@ci.invalid"
           git config --global user.name "Discourse CI"
-
-      - name: Setup packages
-        if: env.BUILD_TYPE != 'LINT'
-        run: |
-          sudo apt-get update
-          sudo apt-get -yqq install postgresql-client libpq-dev jpegoptim optipng jhead pngcrush pngquant
-          wget -qO- https://raw.githubusercontent.com/discourse/discourse_docker/master/image/base/install-pngquant | sudo sh
-
-      - name: Update imagemagick
-        if: env.BUILD_TYPE == 'BACKEND'
-        run: |
-          wget https://raw.githubusercontent.com/discourse/discourse_docker/master/image/base/install-imagemagick
-          chmod +x install-imagemagick
-          sudo ./install-imagemagick
 
       - name: Setup redis
         uses: shogo82148/actions-setup-redis@v1
