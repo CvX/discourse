@@ -29,8 +29,8 @@ jobs:
       fail-fast: false
 
       matrix:
-        build_types: ["BACKEND", "FRONTEND", "LINT"]
-        target: ["PLUGINS", "CORE"]
+        build_types: ["LINT"]
+        target: ["PLUGINS"]
         os: [ubuntu-latest]
         ruby: ["2.6"]
         postgres: ["12"]
