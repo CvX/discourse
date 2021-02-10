@@ -70,6 +70,8 @@ jobs:
 
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
+        env:
+          ImageOS: "ubuntu18"
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
