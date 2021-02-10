@@ -21,7 +21,7 @@ jobs:
       BUILD_TYPE: ${{ matrix.build_types }}
       TARGET: ${{ matrix.target }}
       RAILS_ENV: test
-      PGHOST: localhost
+      PGHOST: postgres
       PGUSER: discourse
       PGPASSWORD: discourse
 
