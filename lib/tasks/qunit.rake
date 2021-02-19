@@ -1,10 +1,22 @@
 # frozen_string_literal: true
 
-desc "Runs the qunit test suite"
+require "net/http"
 
+def wait_for(url)
+  uri = URI(url)
+  Net::HTTP.get(uri)
+
+rescue Errno::ECONNREFUSED, Errno::EADDRNOTAVAIL, Net::ReadTimeout, EOFError
+  sleep 1
+  retry unless elapsed() > 60
+  puts "Timed out. Can not connect to forked server!"
+  exit 1
+end
+
+desc "Runs the qunit test suite"
 task "qunit:test", [:timeout, :qunit_path] do |_, args|
   require "socket"
-  require 'rbconfig'
+  require "rbconfig"
 
   if RbConfig::CONFIG['host_os'][/darwin|mac os/]
     google_chrome_cli = "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
@@ -43,7 +55,7 @@ task "qunit:test", [:timeout, :qunit_path] do |_, args|
     port += 1
   end
 
-  pid = Process.spawn(
+  rails_pid = Process.spawn(
     {
       "RAILS_ENV" => "test",
       "SKIP_ENFORCE_HOSTNAME" => "1",
@@ -54,11 +66,16 @@ task "qunit:test", [:timeout, :qunit_path] do |_, args|
     "#{Rails.root}/bin/unicorn -c config/unicorn.conf.rb"
   )
 
+  ember_pid = Process.spawn(
+    "yarn ember s --proxy http://localhost:#{port}",
+    chdir: "#{Rails.root}/app/assets/javascripts/discourse"
+  )
+
   begin
     success = true
     test_path = "#{Rails.root}/test"
     qunit_path = args[:qunit_path] || "/qunit"
-    cmd = "node #{test_path}/run-qunit.js http://localhost:#{port}#{qunit_path}"
+    cmd = "node #{test_path}/run-qunit.js http://localhost:4200/tests"
     options = { seed: (ENV["QUNIT_SEED"] || Random.new.seed), hidepassed: 1 }
 
     %w{module filter qunit_skip_core qunit_single_plugin}.each do |arg|
@@ -80,19 +97,13 @@ task "qunit:test", [:timeout, :qunit_path] do |_, args|
       Time.now - @now
     end
 
-    # wait for server to accept connections
-    require 'net/http'
-    uri = URI("http://localhost:#{port}/assets/test_helper.js")
     puts "Warming up Rails server"
-    begin
-      Net::HTTP.get(uri)
-    rescue Errno::ECONNREFUSED, Errno::EADDRNOTAVAIL, Net::ReadTimeout, EOFError
-      sleep 1
-      retry unless elapsed() > 60
-      puts "Timed out. Can not connect to forked server!"
-      exit 1
-    end
+    wait_for("http://localhost:#{port}/assets/test_helper.js")
     puts "Rails server is warmed up"
+
+    puts "Warming up Ember CLI server"
+    wait_for("http://localhost:4200/assets/scripts/discourse-boot.js")
+    puts "Ember CLI server is warmed up"
 
     sh(cmd)
 
@@ -105,11 +116,12 @@ task "qunit:test", [:timeout, :qunit_path] do |_, args|
     end
 
     success &&= $?.success?
-
   ensure
     # was having issues with HUP
-    Process.kill "KILL", pid
+    Process.kill "KILL", rails_pid
     FileUtils.rm("#{Rails.root}/tmp/pids/unicorn_test_#{port}.pid")
+
+    Process.kill "KILL", ember_pid
   end
 
   if success
@@ -118,5 +130,4 @@ task "qunit:test", [:timeout, :qunit_path] do |_, args|
     puts "\nTests Failed"
     exit(1)
   end
-
 end
