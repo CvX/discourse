@@ -97,7 +97,7 @@ acceptance("User Preferences - Interface", function (needs) {
     );
   });
 
-  test("shows no default option for light scheme when theme's color scheme is user selectable", async function (assert) {
+  skip("shows no default option for light scheme when theme's color scheme is user selectable", async function (assert) {
     let meta = document.createElement("meta");
     meta.name = "discourse_theme_ids";
     meta.content = "2";
