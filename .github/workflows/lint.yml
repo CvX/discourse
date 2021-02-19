@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     container: discourse/discourse_test:release
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     strategy:
       fail-fast: false
