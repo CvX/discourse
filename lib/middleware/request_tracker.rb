@@ -164,11 +164,12 @@ class Middleware::RequestTracker
     request = Rack::Request.new(env)
 
     if available_in = rate_limit(request)
-      return [
-        429,
-        { "Retry-After" => available_in.to_s },
-        ["Slow down, too many requests from this IP address"]
-      ]
+      Rails.logger.warn("rate-limit oops")
+      # return [
+      #   429,
+      #   { "Retry-After" => available_in.to_s },
+      #   ["Slow down, too many requests from this IP address"]
+      # ]
     end
 
     env["discourse.request_tracker"] = self
