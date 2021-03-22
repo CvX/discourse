@@ -97,5 +97,6 @@ jobs:
         run: yarn install
 
       - name: Core QUnit
-        run: bin/rake qunit:test['1200000']
+        working-directory: ./app/assets/javascripts/discourse
+        run: yarn ember test
         timeout-minutes: 30
