@@ -291,8 +291,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       ace-builds:
-        specifier: ^1.37.5
-        version: 1.37.5
+        specifier: ^1.39.0
+        version: 1.39.0
       decorator-transforms:
         specifier: ^2.3.0
         version: 2.3.0(@babel/core@7.26.7)
@@ -2863,8 +2863,8 @@ packages:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
     engines: {node: '>= 0.6'}
 
-  ace-builds@1.37.5:
-    resolution: {integrity: sha512-VMJ4Cnhq6L9dwvOCyuyyvQuiVTSwdZC7zDKJBBBJJax0wGQ7MvzQZFoi0gMmCm2I4Zuv/ZbtwU/dlglIhCNLhw==}
+  ace-builds@1.39.0:
+    resolution: {integrity: sha512-MqoZojv4gpc5QyTMor/dS6kmruDV9db9LVZbCiT4qYz6WsDiv4qyG5f7ZPc+wjUl6oLMqgCAsBjo1whdSVyMlQ==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -7492,6 +7492,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.7.1:
+    resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   send@0.19.0:
     resolution: {integrity: sha512-dW41u5VfLXu8SJh5bwRmyYUbAoSB3c9uQh6L8h/KtsFREPWpbX1lrljJo186Jc4nmci/sGUZ9a0a0J2zgfq2hw==}
     engines: {node: '>= 0.8.0'}
@@ -10424,7 +10429,7 @@ snapshots:
 
   '@npmcli/fs@3.1.1':
     dependencies:
-      semver: 7.7.0
+      semver: 7.7.1
 
   '@npmcli/git@5.0.8':
     dependencies:
@@ -10435,7 +10440,7 @@ snapshots:
       proc-log: 4.2.0
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.7.0
+      semver: 7.7.1
       which: 4.0.0
     transitivePeerDependencies:
       - bluebird
@@ -10458,7 +10463,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       pacote: 18.0.6
       proc-log: 4.2.0
-      semver: 7.7.0
+      semver: 7.7.1
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -10475,7 +10480,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 6.0.2
       proc-log: 4.2.0
-      semver: 7.7.0
+      semver: 7.7.1
     transitivePeerDependencies:
       - bluebird
 
@@ -10989,7 +10994,7 @@ snapshots:
       mime-types: 2.1.35
       negotiator: 0.6.3
 
-  ace-builds@1.37.5: {}
+  ace-builds@1.39.0: {}
 
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
@@ -15581,7 +15586,7 @@ snapshots:
       make-fetch-happen: 13.0.1
       nopt: 7.2.1
       proc-log: 4.2.0
-      semver: 7.7.0
+      semver: 7.7.1
       tar: 6.2.1
       which: 4.0.0
     transitivePeerDependencies:
@@ -15613,7 +15618,7 @@ snapshots:
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.7.0
+      semver: 7.7.1
       validate-npm-package-license: 3.0.4
 
   normalize-path@2.1.1:
@@ -15628,7 +15633,7 @@ snapshots:
 
   npm-install-checks@6.3.0:
     dependencies:
-      semver: 7.7.0
+      semver: 7.7.1
 
   npm-license-corrections@1.6.2: {}
 
@@ -15638,7 +15643,7 @@ snapshots:
     dependencies:
       hosted-git-info: 7.0.2
       proc-log: 4.2.0
-      semver: 7.7.0
+      semver: 7.7.1
       validate-npm-package-name: 5.0.1
 
   npm-package-arg@12.0.1:
@@ -15657,7 +15662,7 @@ snapshots:
       npm-install-checks: 6.3.0
       npm-normalize-package-bin: 3.0.1
       npm-package-arg: 11.0.3
-      semver: 7.7.0
+      semver: 7.7.1
 
   npm-registry-fetch@17.1.0:
     dependencies:
@@ -16628,6 +16633,8 @@ snapshots:
 
   semver@7.7.0: {}
 
+  semver@7.7.1: {}
+
   send@0.19.0:
     dependencies:
       debug: 2.6.9
@@ -17557,7 +17564,7 @@ snapshots:
 
   typescript-auto-import-cache@0.3.5:
     dependencies:
-      semver: 7.7.0
+      semver: 7.7.1
 
   typescript-memoize@1.1.1: {}
 
@@ -17689,7 +17696,7 @@ snapshots:
   validate-peer-dependencies@1.2.0:
     dependencies:
       resolve-package-path: 3.1.0
-      semver: 7.7.0
+      semver: 7.7.1
 
   vary@1.1.2: {}
 
@@ -17707,7 +17714,7 @@ snapshots:
   volar-service-typescript@0.0.62(@volar/language-service@2.4.0-alpha.16):
     dependencies:
       path-browserify: 1.0.1
-      semver: 7.7.0
+      semver: 7.7.1
       typescript-auto-import-cache: 0.3.5
       vscode-languageserver-textdocument: 1.0.12
       vscode-nls: 5.2.0
