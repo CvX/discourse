@@ -101,8 +101,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(ember-template-lint@6.1.0)
       lint-to-the-future-eslint:
-        specifier: ^2.2.0
-        version: 2.2.0(eslint@9.19.0)
+        specifier: ^3.1.0
+        version: 3.1.0(eslint@9.19.0)
       magnific-popup:
         specifier: 1.1.0
         version: 1.1.0
@@ -2096,6 +2096,7 @@ packages:
   '@faker-js/faker@9.4.0':
     resolution: {integrity: sha512-85+k0AxaZSTowL0gXp8zYWDIrWclTbRPg/pm/V0dSFZ6W6D4lhcG3uuZl4zLsEKfEvs69xDbLN2cHQudwp95JA==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0'}
+    deprecated: Please update to a newer version
 
   '@floating-ui/core@1.6.7':
     resolution: {integrity: sha512-yDzVT/Lm101nQ5TCVeK65LtdN7Tj4Qpr9RTXJ2vPFLqtLxwOrpoxAHAJI8J3yYWUc40J0BDBheaitK5SJmno2g==}
@@ -5237,6 +5238,10 @@ packages:
     resolution: {integrity: sha512-s3Fq41ZVh7vbbe2PN3nrW7yC7U7MFVc5c98/iTl9c2GawNMKx/J648KQRW6WKkuU8GIbbh2IXfIRQjOZnXcTnw==}
     engines: {node: '>=18'}
 
+  globby@14.1.0:
+    resolution: {integrity: sha512-0Ia46fDOaT7k4og1PDW4YbodWWr3scS2vAr2lTbsplOt2WkKp0vQbkI9wKis/T5LV/dqPjO3bpS/z6GTJB82LA==}
+    engines: {node: '>=18'}
+
   globjoin@0.1.4:
     resolution: {integrity: sha512-xYfnw62CKG8nLkZBfWbhWwDw02CHty86jfPcc2cr3ZfeuK9ysoVPPEUxf21bAD/rWAgk52SuBrLJlefNy8mvFg==}
 
@@ -6019,8 +6024,8 @@ packages:
     peerDependencies:
       ember-template-lint: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
 
-  lint-to-the-future-eslint@2.2.0:
-    resolution: {integrity: sha512-qVAplasyGhUxtehl4Rfmj4qNiHx8axZKu9HtqbjeyRrcIRyXGcHr5UECJSRP0H4sraCk+wB1IuG0k7Mv2ax3Aw==}
+  lint-to-the-future-eslint@3.1.0:
+    resolution: {integrity: sha512-JejnF+vL2fy1orNBRZy+Ufwy7bWZge1dLatkVMVcLWwzwm4a1fI3cu85ydftCy08JSXVo4H0uLDwi1iMZHjT4A==}
     engines: {node: 10.* || >= 12.*}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -6880,6 +6885,10 @@ packages:
     resolution: {integrity: sha512-5HviZNaZcfqP95rwpv+1HDgUamezbqdSYTyzjTvwtJSnIH+3vnbmWsItli8OFEndS984VT55M3jduxZbX351gg==}
     engines: {node: '>=12'}
 
+  path-type@6.0.0:
+    resolution: {integrity: sha512-Vj7sf++t5pBD637NSfkxpHSMfWaeig5+DKWLhcqIYx6mWQz5hdJTGDVMQiJcw1ZYkhs7AazKDGpRVji1LJCZUQ==}
+    engines: {node: '>=18'}
+
   pend@1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
 
@@ -7489,6 +7498,11 @@ packages:
 
   semver@7.7.0:
     resolution: {integrity: sha512-DrfFnPzblFmNrIZzg5RzHegbiRWg7KMR7btwi2yjHwx06zsUbO5g613sVwEV7FTwmzJu+Io0lJe2GJ3LxqpvBQ==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.7.1:
+    resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -8228,6 +8242,10 @@ packages:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
     engines: {node: '>=18'}
 
+  unicorn-magic@0.3.0:
+    resolution: {integrity: sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==}
+    engines: {node: '>=18'}
+
   union-value@1.0.1:
     resolution: {integrity: sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg==}
     engines: {node: '>=0.10.0'}
@@ -8325,10 +8343,10 @@ packages:
   virtual-dom@2.1.1:
     resolution: {integrity: sha512-wb6Qc9Lbqug0kRqo/iuApfBpJJAq14Sk1faAnSmtqXiwahg7PVTvWMs9L02Z8nNIMqbwsxzBAA90bbtRLbw0zg==}
 
-  volar-service-typescript@0.0.62:
-    resolution: {integrity: sha512-p7MPi71q7KOsH0eAbZwPBiKPp9B2+qrdHAd6VY5oTo9BUXatsOAdakTm9Yf0DUj6uWBAaOT01BSeVOPwucMV1g==}
+  volar-service-typescript@0.0.60:
+    resolution: {integrity: sha512-QDGC66exWZMH6fs93M6XFIBMxDObxgV9q1XENII7vGzvW5KqikYG4f06AO+MWsHmAna8cI+X28xITb0SzzB0Yw==}
     peerDependencies:
-      '@volar/language-service': ~2.4.0
+      '@volar/language-service': ~2.4.0-alpha.19
     peerDependenciesMeta:
       '@volar/language-service':
         optional: true
@@ -10224,7 +10242,7 @@ snapshots:
       silent-error: 1.1.1
       typescript: 5.6.3
       uuid: 8.3.2
-      volar-service-typescript: 0.0.62(@volar/language-service@2.4.0-alpha.16)
+      volar-service-typescript: 0.0.60(@volar/language-service@2.4.0-alpha.16)
       vscode-languageserver-protocol: 3.17.5
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.0.8
@@ -10424,7 +10442,7 @@ snapshots:
 
   '@npmcli/fs@3.1.1':
     dependencies:
-      semver: 7.7.0
+      semver: 7.7.1
 
   '@npmcli/git@5.0.8':
     dependencies:
@@ -10435,7 +10453,7 @@ snapshots:
       proc-log: 4.2.0
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.7.0
+      semver: 7.7.1
       which: 4.0.0
     transitivePeerDependencies:
       - bluebird
@@ -10458,7 +10476,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       pacote: 18.0.6
       proc-log: 4.2.0
-      semver: 7.7.0
+      semver: 7.7.1
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -10475,7 +10493,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 6.0.2
       proc-log: 4.2.0
-      semver: 7.7.0
+      semver: 7.7.1
     transitivePeerDependencies:
       - bluebird
 
@@ -14287,6 +14305,15 @@ snapshots:
       slash: 5.1.0
       unicorn-magic: 0.1.0
 
+  globby@14.1.0:
+    dependencies:
+      '@sindresorhus/merge-streams': 2.3.0
+      fast-glob: 3.3.3
+      ignore: 7.0.3
+      path-type: 6.0.0
+      slash: 5.1.0
+      unicorn-magic: 0.3.0
+
   globjoin@0.1.4: {}
 
   globrex@0.1.2: {}
@@ -15080,12 +15107,11 @@ snapshots:
       ember-template-lint: 6.1.0
       walk-sync: 2.2.0
 
-  lint-to-the-future-eslint@2.2.0(eslint@9.19.0):
+  lint-to-the-future-eslint@3.1.0(eslint@9.19.0):
     dependencies:
       eslint: 9.19.0
+      globby: 14.1.0
       import-cwd: 3.0.0
-      semver: 7.6.3
-      walk-sync: 3.0.0
 
   lint-to-the-future@2.6.2(encoding@0.1.13):
     dependencies:
@@ -15581,7 +15607,7 @@ snapshots:
       make-fetch-happen: 13.0.1
       nopt: 7.2.1
       proc-log: 4.2.0
-      semver: 7.7.0
+      semver: 7.7.1
       tar: 6.2.1
       which: 4.0.0
     transitivePeerDependencies:
@@ -15613,7 +15639,7 @@ snapshots:
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.7.0
+      semver: 7.7.1
       validate-npm-package-license: 3.0.4
 
   normalize-path@2.1.1:
@@ -15628,7 +15654,7 @@ snapshots:
 
   npm-install-checks@6.3.0:
     dependencies:
-      semver: 7.7.0
+      semver: 7.7.1
 
   npm-license-corrections@1.6.2: {}
 
@@ -15638,7 +15664,7 @@ snapshots:
     dependencies:
       hosted-git-info: 7.0.2
       proc-log: 4.2.0
-      semver: 7.7.0
+      semver: 7.7.1
       validate-npm-package-name: 5.0.1
 
   npm-package-arg@12.0.1:
@@ -15657,7 +15683,7 @@ snapshots:
       npm-install-checks: 6.3.0
       npm-normalize-package-bin: 3.0.1
       npm-package-arg: 11.0.3
-      semver: 7.7.0
+      semver: 7.7.1
 
   npm-registry-fetch@17.1.0:
     dependencies:
@@ -15979,6 +16005,8 @@ snapshots:
   path-type@4.0.0: {}
 
   path-type@5.0.0: {}
+
+  path-type@6.0.0: {}
 
   pend@1.2.0: {}
 
@@ -16627,6 +16655,8 @@ snapshots:
   semver@7.6.3: {}
 
   semver@7.7.0: {}
+
+  semver@7.7.1: {}
 
   send@0.19.0:
     dependencies:
@@ -17557,7 +17587,7 @@ snapshots:
 
   typescript-auto-import-cache@0.3.5:
     dependencies:
-      semver: 7.7.0
+      semver: 7.7.1
 
   typescript-memoize@1.1.1: {}
 
@@ -17607,6 +17637,8 @@ snapshots:
   unicode-property-aliases-ecmascript@2.1.0: {}
 
   unicorn-magic@0.1.0: {}
+
+  unicorn-magic@0.3.0: {}
 
   union-value@1.0.1:
     dependencies:
@@ -17689,7 +17721,7 @@ snapshots:
   validate-peer-dependencies@1.2.0:
     dependencies:
       resolve-package-path: 3.1.0
-      semver: 7.7.0
+      semver: 7.7.1
 
   vary@1.1.2: {}
 
@@ -17704,10 +17736,10 @@ snapshots:
       x-is-array: 0.1.0
       x-is-string: 0.1.0
 
-  volar-service-typescript@0.0.62(@volar/language-service@2.4.0-alpha.16):
+  volar-service-typescript@0.0.60(@volar/language-service@2.4.0-alpha.16):
     dependencies:
       path-browserify: 1.0.1
-      semver: 7.7.0
+      semver: 7.7.1
       typescript-auto-import-cache: 0.3.5
       vscode-languageserver-textdocument: 1.0.12
       vscode-nls: 5.2.0
